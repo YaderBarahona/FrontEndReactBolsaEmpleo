@@ -7,9 +7,9 @@ export const getOffers = async () => {
 };
 
 //post de skill applicant 
-export const postOffer = async (education) => {
+export const postOffer = async (applicant) => {
   let data = await api
-    .post("/OfferApplicants", education)
+    .post("/OfferApplicants", applicant)
     .then((result) => result.data);
   return data;
 };

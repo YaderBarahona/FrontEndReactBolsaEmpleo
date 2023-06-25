@@ -241,6 +241,13 @@ h2{
   text-align: center;
 }
 
+
+h3{
+  color: #242424;
+  text-align: center;
+}
+
+
 h4{
   color: #242424;
 }
@@ -257,8 +264,8 @@ h5{
 }
 
 .viewApp{
-  width: 200px;
-  height: 150px;
+  width: 500px;
+  height: 50px;
   margin: 0 auto;
 }
 
@@ -367,6 +374,28 @@ h5{
 .btnO{
   margin-left: 20px;
   margin-top: 20px;
+}
+
+.formApply{
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.inputApply{
+background-color: white;
+color: #1a1a1a;
+}
+
+.btnApply{
+  width: 90px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: #0d6efd;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  
 }
 
 footer{

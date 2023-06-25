@@ -20,13 +20,13 @@ import { getSkills, postSkill } from "../../../services/SkillService";
 
   const AddSkill = (props) => {
 
-    const [toggle, setToggle] = useState(false);
+    // const [toggle, setToggle] = useState(false);
 
-    useEffect(() => {
-      let myCollapse = document.getElementById("collapseTarget");
-      let bsCollapse = new Collapse(myCollapse, { toggle: false });
-      toggle ? bsCollapse.show() : bsCollapse.hide();
-    });
+    // useEffect(() => {
+    //   let myCollapse = document.getElementById("collapseTarget");
+    //   let bsCollapse = new Collapse(myCollapse, { toggle: false });
+    //   toggle ? bsCollapse.show() : bsCollapse.hide();
+    // });
   
   const queryClient = useQueryClient();
 
@@ -86,14 +86,17 @@ import { getSkills, postSkill } from "../../../services/SkillService";
 
   return (
     <>
+    <br />
+    <br />
+    <br />
       <div className="py-2">
-        <button
+        {/* <button
           className="btn btn-dark titulo-item"
           onClick={() => setToggle((toggle) => !toggle)}
-        >
-          Add Skill
-        </button>
-        <div className="collapse" id="collapseTarget">
+        > */}
+         <h3>Add Skill</h3> 
+        {/* </button> */}
+        {/* <div className="collapse" id="collapseTarget"> */}
           <br />
           <div class="container">
             <div class="row">
@@ -113,7 +116,7 @@ import { getSkills, postSkill } from "../../../services/SkillService";
               ))}
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

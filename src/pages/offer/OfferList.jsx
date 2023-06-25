@@ -1,5 +1,6 @@
 import { useQuery } from "react-query";
 import { getOffers } from "../../services/OfferService";
+import InputModal from "../applicantView/components/InputModal";
 
 const OfferList = () => {
   const { data, isLoading, isError } = useQuery("offers", getOffers, {
@@ -31,14 +32,17 @@ const OfferList = () => {
               <p>{offer.company}</p>
               <p>{offer.offerDescription}</p>
               <br />
-              <a href="#" className="btn btn-primary btn-sm float-right">Apply Offer</a>
+              {/* <a className="btn btn-primary btn-sm float-right">Apply Offer</a> */}
+              <InputModal param={offer.idOffer}></InputModal>
+
             </div>
           </div>
-      
         </div>
       </div>
+      
 
       ))}
+      
     </div>
   );
 };

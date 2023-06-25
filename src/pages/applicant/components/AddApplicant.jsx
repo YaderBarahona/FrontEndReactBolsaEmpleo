@@ -44,12 +44,19 @@ const AddApplicant = () => {
       email: emailApplicant.current.value,
       resume: resumeApplicant.current.value,
     };
-    mutation.mutateAsync(newApplicant);
 
-    MySwal.fire({
-      title: <strong>Applicant added!</strong>,
-      icon: "success",
-    });
+    try {
+      mutation.mutateAsync(newApplicant);
+      MySwal.fire({
+        title: <strong>Applicant added!</strong>,
+        icon: "success",
+      });
+    } catch (error) {
+      MySwal.fire({
+        title: <strong>Error...</strong>,
+        icon: "error",
+      });
+    }
 
     setInput("");
   };
@@ -124,7 +131,7 @@ const AddApplicant = () => {
         </div>
 
         <div className="d-grid col-6 mx-auto">
-        {/* <div class="cssToolTip"> */}
+          {/* <div class="cssToolTip"> */}
           <button
             onClick={validar}
             className="btn btn-primary"
@@ -136,7 +143,7 @@ const AddApplicant = () => {
             {/* <span> Add applicant </span> */}
           </button>
           {/* </div> */}
-        </div>        
+        </div>
       </div>
     </div>
   );

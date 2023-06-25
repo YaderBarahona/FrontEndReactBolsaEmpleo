@@ -11,6 +11,7 @@ import Home from './pages/home/Home'
 import ApplicantView from './pages/applicantView/ApplicantView'
 import ApplicantSkill from './pages/applicantView/ApplicantSkill'
 import OfferList from './pages/offer/OfferList'
+import ViewApply from './pages/applicantView/ViewApply'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>    
@@ -27,6 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/applicantList/applicantSkill/:idApplicant" element={<ApplicantSkill />} />
           
           <Route path="/offerList" element={<OfferList />} />  
+
+          <Route path="/applicantList/viewApplicant/:idApplicant/apply/:idApplicant" element={<ViewApply/>} />
+
         </Route>
       </Routes>
       </BrowserRouter>    

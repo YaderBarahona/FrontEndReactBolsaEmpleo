@@ -15,6 +15,7 @@ import {
 import AddEducation from "./AddEducation";
 import TableEducation from "./TableEducation";
 import { getEducationById } from "../../../services/FormationService";
+import { NavLink } from "react-router-dom";
 
 const ViewApplicant = () => {
   const applicantP = useParams();
@@ -29,6 +30,7 @@ const ViewApplicant = () => {
     <>
       <div>
         <br />
+
         <h1>View Applicant</h1>
         {/* <h1>{recurso}</h1> */}
         <div>
@@ -39,26 +41,30 @@ const ViewApplicant = () => {
                 <h4>Email: {applicant.email}</h4>
                 <h4>Resume: {applicant.resume}</h4>
                 <h4>
-                  Skills: {applicant.applicantSkillsList.skillDescription}
+                  Skills:
+                  {applicant.applicantSkillsList.map((skills) => (
+                    <>
+                      <span> {skills.skillDescription}, </span>
+                    </>
+                  ))}
                 </h4>
-
-                {/* {applicant.map((applicant) => ( 
-                  <>
-                  <h4>Skills: {applicant.applicantSkillsList}</h4>
-                  </>
-                 ))} */}
               </div>
-
-<br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
               <div className="addFor">
                 <AddEducation id={applicantP.idApplicant} />
               </div>
 
               <TableEducation id={applicantP.idApplicant} />
               <hr />
-              <p className="viewAppP">
-                <a href="">View my applications</a>
-              </p>
+              <NavLink to={`apply/${applicant.idApplicant}`}>
+                <p className="viewAppP">
+                  <a>View my applications</a>
+                </p>
+              </NavLink>
             </>
           ) : (
             "Loading..."
